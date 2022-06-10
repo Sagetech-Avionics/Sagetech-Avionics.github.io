@@ -8,6 +8,7 @@ __Authors:__ @mmccormick12 and @faberc.
 
 This code has been tested in SITL, on a Cubepilot CubeOrange flight controller, and a CUAV X7+ flight controller.
 
+![PX4_MXS_DEMO](https://github.com/Sagetech-Avionics/Sagetech-Avionics.github.io/raw/main/videos/px4_demo1.mp4)
 
 ## Thanks!
 
@@ -28,6 +29,8 @@ To build the code follow the typical PX4 build instructions for your flight cont
 ## Issues
 
 - [ ] Flight IDs for vehicles begin to disappear after a while
+- [ ] Sometimes causes repeated restarting of flight controller before settling down and fully connecting
+- [ ] A few instances observed wehre no vehicles except ownship (without FlightId and altitude) showing up until reboot
 - [ ] Want to implement a vehicle timeout/replacement scheme to replace inactive vehicles with newer vehicles
 - [ ] Add transponder and system failure message handling.
 - [ ] Add ackID mismatch handling.
