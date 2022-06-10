@@ -17,7 +17,7 @@ cd PX4_Autopilot
 git switch pr-sagetech-mxs
 ```
 
-To build the code follow the typical PX4 build instructions for your flight controller.
+To build the code follow the typical PX4 build instructions for your flight controller. This driver must be enabled in the px4board file for your board.
 
 ---
 
