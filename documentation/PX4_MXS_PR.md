@@ -75,9 +75,9 @@ Reboot of the flight controller is required in order for changes to these settin
 
 If __MXS_EXT_CFG__ is disabled, if all of the hardware is correctly connected, after step 3, the user can simply open up QGroundControl and see ADSB traffic if there is a valid GPS fix.
 
-### Custom Commands
+### Commands
 
-Custom commands may be sent to the driver during runtime in order to change certain configurations using the following commands:
+The following commands may be sent to the driver during runtime in order to change certain configurations using the following commands:
  - `sagetech_mxs flightid <flightid>` : The user may change the flight ID in flight by providing an 8-character `<flightid>` using this command.
  - `sagetech_mxs opmode <opmode>` : The user can control the transponder operating mode. Valid opmodes include: ['off', 'on', 'stby', 'alt'] or numerical values 0-3. 
  - `sagetech_mxs squawk <squawk>` : The user may set the squawk code to an octal value between 0 and 7777.
