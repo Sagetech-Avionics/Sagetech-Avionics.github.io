@@ -1,11 +1,15 @@
 # Sagetech MXS PX4 Support Driver
+
 This pull request provides support for Sagetech MXS transponders.
 
 __Authors:__ @mmccormick12 and @faberc.
 
-## Notes
+## Testing
 
-This code has been tested on a Cubepilot CubeOrange board, and CUAV X7+.
+This code has been tested in SITL, on a Cubepilot CubeOrange flight controller, and a CUAV X7+ flight controller.
+
+
+## Thanks!
 
 Thank you very much to Ryan Johnston and @dakejahl as well as others in the PX4 Slack for your assistance. Feedback on this pull request would be very appreciated.
 
@@ -23,7 +27,11 @@ To build the code follow the typical PX4 build instructions for your flight cont
 
 ## Issues
 
-- Want to implement a vehicle timeout/replacement scheme to replace inactive vehicles with newer vehicles
+- [ ] Flight IDs for vehicles begin to disappear after a while
+- [ ] Want to implement a vehicle timeout/replacement scheme to replace inactive vehicles with newer vehicles
+- [ ] Add transponder and system failure message handling.
+- [ ] Add ackID mismatch handling.
+- [ ] Remove commented out code
 
 ---
 
