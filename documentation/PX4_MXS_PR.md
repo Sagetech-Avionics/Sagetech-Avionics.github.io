@@ -67,7 +67,6 @@ The following parameters allow configuration of the ADSB-out information sent fr
 - __ADSB_SQUAWK__: Squawk/Transponder (Mode 3/A) code that is braodcasted to ATC that is usually assigned by your ATC for a given flight. In the USA/Canada the default squawk code is for VFR which is 1200. Most parts of Europe and Australia use 7000. If an invalid octal number is set then it will be reset to 1200.
 - __ADSB_LIST_MAX__: The number of vehicles to keep track of. Default: 25.
 - __ADSB_ICAO_SPECL__ : Special ICAO ID to attempt to track at all times.
-- __ADSB_IDENT__: Set the IDENT bit in ADSB-out messages for 8 seconds.
 
 Reboot of the flight controller is required in order for changes to these settings to take effect.
 
