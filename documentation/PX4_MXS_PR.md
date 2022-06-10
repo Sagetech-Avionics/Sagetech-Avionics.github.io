@@ -1,6 +1,8 @@
 # Sagetech MXS PX4 Support Driver
 This pull request provides support for Sagetech MXS transponders.
 
+__Authors:__ @mmccormick12 and @faberc.
+
 ## Notes
 
 This code has been tested on a Cubepilot CubeOrange board, and CUAV X7+.
@@ -18,6 +20,10 @@ git switch pr-sagetech-mxs
 ```
 
 To build the code follow the typical PX4 build instructions for your flight controller. This driver must be enabled in the px4board file for your board.
+
+## Issues
+
+- Want to implement a vehicle timeout/replacement scheme to replace inactive vehicles with newer vehicles
 
 ---
 
