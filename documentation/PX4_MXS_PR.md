@@ -8,7 +8,6 @@ __Authors:__ @mmccormick12 and @faberc.
 
 This code has been tested in SITL, on a Cubepilot CubeOrange flight controller, and a CUAV X7+ flight controller.
 
-![PX4_MXS_DEMO](https://github.com/Sagetech-Avionics/Sagetech-Avionics.github.io/raw/main/videos/px4_demo1.mp4)
 
 ## Thanks!
 

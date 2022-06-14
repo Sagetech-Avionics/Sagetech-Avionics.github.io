@@ -36,12 +36,19 @@ What follows is a very initial attempt at documentation of the functionality.
 By default, this guide is assuming that you are connecting the MXS transponder to the autopilot board through the MXS COM1 port via a RS232 to TTL adapter. Note that the MXS COM ports can be configured to use RS232 or RS422 using a connection harness or control box. Use the appropriate configuration and cable.
 
 ## Step 1: Configure Serial Parameters
-Identify which serial port you will be connecting the MXS to. Configure the serial parameters as follows where 'x' refers to the serial port number (i.e. 2 for telem2):
+
+First the flight controller must be configured to allow communication to the MXS. Configure the serial parameters as follows where 'x' refers to the serial port number (i.e. 2 for telem2):
+
 - __SERIALx_PROTOCOL__: Change the SERIALx_PROTOCOL parameter to 35 for ADSB.
 - __SERIALx_BAUD__: Change the SERIALx_BAUD parameter to 57 for for a 57600 baud rate.
 - __SRx_ADSB__: Change the SRx_ADSB parameter to 2 for a 2Hz streaming rate.
 
+Reboot the flight controller in order for changes to these settings to take effect.
+
 ## Step 2: Configure ADSB Parameters
+
+The following parameters allow configuration of the ADSB-out information sent from your vehicle identifying it and its capabilities to other vehicles with ADSB capability.
+
 - __ADSB_TYPE__: Set the ADSB_TYPE parameter to "4" for Sagetech MXS.
 - __ADSB_ICAO_ID__: Set the unique vehicle identification number of your aircraft. If set to 0, a random value will be generated. Transponder must be in OFF mode to set the ICAO.
 - __ADSB_EMIT_TYPE__: ADSB classification of vehicle type. Default values is 14 (UAV)
@@ -52,19 +59,22 @@ Identify which serial port you will be connecting the MXS to. Configure the seri
 - __ADSB_RADIUS_MAX__: Limits the radius in meters around the aircraft that vehicles will be detected and stored. Set to 0 to disable limit.
 - __ADSB_OPTION__ : Setting bit 3 disables MXS automatic configuration and assumes manual configuration of the MXS. 
 
+Reboot the flight controller in order for changes to these settings to take effect.
+
 ## Optional: Manual Configuration
 More detailed manual configuration can be done through the Sagetech Mission Control software prior to connecting the autopilot for more in-depth control.
-1. Start with the Autopilot disconnected from the MXS.
-2. Connect to the MXS through COM 0 with baud rate 230400 with Mission Control.
-3. Manually set the MX COM 1 port baud rate to 57600.
-4. Set any other desired settings through the installation configuration panel (i.e. ICAO, emitter category, aircraft size, etc.) and send the configuration.
-5. Power on Autopilot and connect to it with Mission Planner (or another GCS)
-6. Configure the Autopilot ADSB settings
+
+1. Power the flight controller and using your Ground Control software, configure the following ADSB settings:
     - Ensure that ADSB_TYPE is set to "4"
-    - Set ADSB_RF_SELECT to "0" to keep the MXS in OFF mode
-    - Ensure that ADSB_OPTION is set to "8" (or set bit 3) to enable manual configuration
-7. Connect the Autopilot to the MXS through its COM 1 port.
-8. Power cycle the Autopilot, and connect to it with Mission Planner.
+    - Set ADSB_RF_SELECT to "0" to place the MXS in OFF mode
+    - Ensure that ADSB_OPTION is set to "8" (or set bit 3) to enable manual configuration.
+    - Reboot the flight controller.
+2. Connect to the MXS with Mission Control (i.e. through COM 0). Make your configurations in the installation control panel.
+    - Manually set the COM 1 port baud rate to 57600.
+    - Optionally set other desired settings (i.e. ICAO, emitter category, aircraft size, etc.)
+3. Connect the flight controller to the MXS.
+4. Power cycle the flight controller, and connect to it with Mission Planner.
+
 The MXS should be configured correctly, and the correct settings should appear in the ADSB parameter tree.
 
 Note: When changing MXS ICAO, the MXS needs to be in OFF mode. This means that ADSB_RF_SELECT must be set to "0".
