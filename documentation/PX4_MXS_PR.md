@@ -23,9 +23,7 @@ To build the code follow the typical PX4 build instructions for your flight cont
 ## Issues
 
 - [ ] Flight IDs for vehicles begin to disappear after a while
-- [ ] Sometimes causes repeated restarting of flight controller before settling down and fully connecting
-- [ ] A few instances observed wehre no vehicles except ownship (without FlightId and altitude) showing up until reboot
-- [ ] Want to implement a vehicle timeout/replacement scheme to replace inactive vehicles with newer vehicles
+- [ ] In the future, implement a timer based time-out for some vehicles in vehicle list.
 - [ ] Add transponder and system failure message handling.
 - [ ] Add ackID mismatch handling.
 - [ ] Remove commented out code
