@@ -25,6 +25,19 @@ What follows is a very initial attempt at documentation of the functionality.
 ![SagetechLogo](https://github.com/Sagetech-Avionics/Sagetech-Avionics.github.io/raw/main/images/sglogo.png)
 # Sagetech MXS Transponder with Ardupilot
 
+## Enabling the Driver
+The Sagetech MXS driver is enabled by default in the Cubepilot CubeOrange board, and the CUAV-X7+ board. To enable it for another board, you must adjust the hwdef.dat file for that board.
+
+The hwdef.dat file for your board can be found at: `ardupilot/libraries/AP_HAL_ChibiOS/hwdef/<BOARD>/hwdef.dat`, where `<BOARD>` should be the name of the board you wish to enable this driver on.
+
+The following lines should be added to the bottom of the `hwdef.dat` file:
+
+```
+define HAL_ADSB_SAGETECH_MXS_ENABLED HAL_ADSB_ENABLED
+```
+
+Save, and rebuild Ardupilot following the typical [Ardupilot instructions for building from source](https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md).
+
 ## Required Hardware
 - Sagetech MXS Certified Transponder
 - Autopilot Board (i.e. CubeOrange, CUAV-X7+)
@@ -68,11 +81,10 @@ More detailed manual configuration can be done through the Sagetech Mission Cont
     - Ensure that ADSB_TYPE is set to "4"
     - Set ADSB_RF_SELECT to "0" to place the MXS in OFF mode
     - Ensure that ADSB_OPTION is set to "8" (or set bit 3) to enable manual configuration.
-    - Reboot the flight controller.
 2. Connect to the MXS with Mission Control (i.e. through COM 0). Make your configurations in the installation control panel.
     - Manually set the COM 1 port baud rate to 57600.
     - Optionally set other desired settings (i.e. ICAO, emitter category, aircraft size, etc.)
-3. Connect the flight controller to the MXS.
+3. Reboot the flight controller.
 4. Power cycle the flight controller, and connect to it with Mission Planner.
 
 The MXS should be configured correctly, and the correct settings should appear in the ADSB parameter tree.

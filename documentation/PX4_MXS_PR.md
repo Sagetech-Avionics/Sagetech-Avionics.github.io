@@ -6,12 +6,7 @@ __Authors:__ @mmccormick12 and @faberc.
 
 ## Testing
 
-This code has been tested in SITL, on a Cubepilot CubeOrange flight controller, and a CUAV X7+ flight controller.
-
-
-## Thanks!
-
-Thank you very much to Ryan Johnston and @dakejahl as well as others in the PX4 Slack for your assistance. Feedback on this pull request would be very appreciated.
+This code has been tested in SITL, on a Cubepilot CubeOrange flight controller.
 
 ## Getting And Building this Code
 
@@ -52,6 +47,9 @@ By default, this guide is assuming that you are connecting the MXS transponder t
 ## Example Connection
 
 ![mxs_px4_connection](https://github.com/Sagetech-Avionics/Sagetech-Avionics.github.io/raw/main/images/mxs_px4_connection.png)
+
+## Parameters Notes
+Full documentation for parameters can be found in `src/drivers/transponder/sagetech_mxs/parameters.c`.
 
 ## Step 1: Configure Serial Parameters
 
