@@ -22,11 +22,11 @@ To build the code follow the typical PX4 build instructions for your flight cont
 
 ## Issues
 
-- [ ] Flight IDs for vehicles begin to disappear after a while
+- [x] Intermittent hard faults/resets when SVR/MSR data is fed from the MXS in some cases.
+- [x] Add transponder and system failure message handling.
+- [ ] Flight IDs for vehicles begin to disappear after a while? (problem needs better characterization)
 - [ ] In the future, implement a timer based time-out for some vehicles in vehicle list.
-- [ ] Add transponder and system failure message handling.
 - [ ] Add ackID mismatch handling.
-- [ ] Remove commented out code
 
 ---
 
